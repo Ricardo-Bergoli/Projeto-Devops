@@ -10,9 +10,8 @@ Docker e um pipeline de Integração Contínua podem resolver problemas reais de
 colaboração e confiabilidade no fluxo de desenvolvimento de software.
 
 ## Equipe
-- Nome Completo — RU 000000
-- Nome Completo — RU 000000
-- Nome Completo — RU 000000
+- Ricardo Bergoli dos Santos — RU 5230778
+- Joao Victor Souza Oliveira — RU 5151035
 
 ## Objetivo
 Padronizar o fluxo de trabalho da equipe de desenvolvimento, reduzindo atrasos, erros pós-
