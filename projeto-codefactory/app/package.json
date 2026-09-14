@@ -1,0 +1,11 @@
+{
+  "name": "codefactory-app",
+  "version": "1.0.0",
+  "description": "Aplicação de exemplo para o projeto de Cultura DevOps da CodeFactory Solutions",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"(adicione seus testes aqui)\" && exit 0"
+  },
+  "license": "MIT"
+}

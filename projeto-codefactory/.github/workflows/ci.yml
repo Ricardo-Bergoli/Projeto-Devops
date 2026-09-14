@@ -1,0 +1,38 @@
+name: CI - CodeFactory Solutions
+
+# Dispara a pipeline em pushes e pull requests para a branch main e desenvolvimento
+on:
+  push:
+    branches: [ "main", "desenvolvimento" ]
+  pull_request:
+    branches: [ "main", "desenvolvimento" ]
+
+jobs:
+  build-and-test:
+    name: Instalar dependências, buildar e testar
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Baixa o código do repositório para o runner
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      # 2. Configura o Node.js no ambiente da pipeline
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # 3. Instala as dependências da aplicação
+      - name: Instalar dependências
+        working-directory: ./app
+        run: npm install
+
+      # 4. Executa os testes (placeholder — substitua por testes reais)
+      - name: Rodar testes
+        working-directory: ./app
+        run: npm test
+
+      # 5. Builda a imagem Docker para validar que o Dockerfile está correto
+      - name: Build da imagem Docker
+        run: docker build -t codefactory-app:ci .

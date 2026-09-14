@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: codefactory-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - PORT=3000
+    restart: unless-stopped
+
+  db:
+    image: postgres:16-alpine
+    container_name: codefactory-db
+    environment:
+      POSTGRES_USER: codefactory
+      POSTGRES_PASSWORD: codefactory123
+      POSTGRES_DB: codefactory_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  db_data:
