@@ -25,14 +25,20 @@ jobs:
 
       # 3. Instala as dependências da aplicação
       - name: Instalar dependências
-        working-directory: ./app
+        working-directory: ./projeto-codefactory/app
         run: npm install
 
       # 4. Executa os testes (placeholder — substitua por testes reais)
       - name: Rodar testes
-        working-directory: ./app
+        working-directory: ./projeto-codefactory/app
         run: npm test
 
       # 5. Builda a imagem Docker para validar que o Dockerfile está correto
       - name: Build da imagem Docker
+        working-directory: ./projeto-codefactory
         run: docker build -t codefactory-app:ci .
+
+      # 6. Valida a configuração do docker-compose
+      - name: Validar docker-compose
+        working-directory: ./projeto-codefactory
+        run: docker compose config
